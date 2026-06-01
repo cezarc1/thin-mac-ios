@@ -1,0 +1,5 @@
+framework module ProbeBinaryKit {
+  umbrella header "ProbeBinaryKit.h"
+  export *
+  module * { export * }
+}

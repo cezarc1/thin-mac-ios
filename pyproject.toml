@@ -1,0 +1,24 @@
+[project]
+name = "thin-mac-ios"
+version = "0.1.0"
+description = "Research harness for Linux-built iOS simulator artifacts plus thin macOS verification."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[project.scripts]
+thin-mac-ios-audit = "ios_linux_harness.cli.audit_prior_art:main"
+thin-mac-ios-hygiene = "ios_linux_harness.cli.check_hygiene:main"
+thin-mac-ios-report = "ios_linux_harness.cli.report:main"
+thin-mac-ios-xctestrun = "ios_linux_harness.cli.generate_xctestrun:main"
+thin-mac-ios-extract-accessibility = "ios_linux_harness.cli.extract_accessibility_tree:main"
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
